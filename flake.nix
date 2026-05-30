@@ -16,14 +16,9 @@
     in {
       packages.default = pkgs.stdenv.mkDerivation rec {
         pname = "rux";
-        version = "v0.2.2";
+        version = "local";
 
-        src = pkgs.fetchFromGitHub {
-          owner = "rux-lang";
-          repo = "Rux";
-          rev = "${version}";
-          hash = "sha256-mOPksefI4u3xZUKNkiC9aXoYUyjNpnSP7/aqTZaBff0=";
-        };
+        src = self;
 
         nativeBuildInputs = with pkgs; [cmake ninja];
 
